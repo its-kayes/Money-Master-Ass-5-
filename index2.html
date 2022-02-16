@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- tailwindcss -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link rel="stylesheet" href="styles/style.css"> -->
+</head>
+<body class="container">
+    <header>
+        <h1 class="text-2xl text-center m-5"> Monthly calculation </h1>
+    </header>
+    <main>
+
+        <section class="grid gap-4 grid-cols-2 grid-rows-6 ">
+
+            <div id="bang-img" class="col-6 m-3">
+                <img src="media/moeny-bank.jpg" alt=""  style="width: 700px;">
+            </div>
+
+            <div class="text-center bg-slate-50 text-xl">
+                <p> <h2 class="font-semibold"> Income </h2></p>
+                <p>Income: <input type="text" class="p-2 bg-gray-200 rounded w-40 m-2 border-solid" placeholder="input"></p>
+            
+                <p class="mb-5"> <h2 class="font-semibold"> Expenses </h2></p>
+                <p class="mt-3">Income:  <input type="text" class="p-2 bg-gray-200 rounded w-40 m-2 border-solid" placeholder="input"></p>
+                <p>Rent:    <input type="text" class="p-2 bg-gray-200 rounded w-40 m-2 border-solid" placeholder="input"></p>
+                <p>Clothes: <input type="text" class="p-2 bg-gray-200 rounded w-40 m-2 border-solid" placeholder="input"></p>
+                <button class="rounded-md bg-indigo-500 px-4 py-1 m-4"> Save Changes</button>
+                <p class="font-semibold mt-3"> Total Expenses: <span>5500</span> </p>
+                <p class="font-semibold m-3"> Balance: <span>4500</span> </p>
+                <p > Save: <input class="p-2 bg-gray-200 rounded w-20 m-2 border-solid" type="number" placeholder="20"> % <button class="rounded rounded-md bg-indigo-500 px-4 py-1"> Save </button> </p>
+                <br>
+                <p class=" font-semibold"> Saving Amount: <span>2000</span></p>
+                <p class=" font-semibold mb-5">Remaining Balance: <span>2500</span></p>
+            </div>
+
+        </section>
+
+    </main>
+    
+
+    <script src="app.js"></script>
+</body>
+</html>
