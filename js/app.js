@@ -1,5 +1,19 @@
+function kamanoTaka(){
+    let income = document.getElementById('income');
+    let incomeTaka = parseInt(income.value);
+    return incomeTaka;
+}
+
+function items(item){
+    let items = document.getElementById(item);
+    let itemsPriceText = items.value;
+    let itemsPrice = parseInt(itemsPriceText);
+}
+
+
 document.getElementById('calculate').addEventListener('click', function(){
     // Food Cost 
+    items('food');
     let food = document.getElementById('food');
     let foodPriceText = food.value;
     let foodPrice = parseInt(foodPriceText);
@@ -21,22 +35,25 @@ document.getElementById('calculate').addEventListener('click', function(){
     // totalCostText.innerText = totalCost;
 
     // Balance Part 
-    let income = document.getElementById('income');
-    let incomeTaka = parseInt(income.value);
-    document.getElementById('balance').innerText= incomeTaka - parseInt(totalCost);
+    // let income = document.getElementById('income');
+    // let incomeTaka = parseInt(income.value);
+    let balance = kamanoTaka() - parseInt(totalCost);
+    document.getElementById('balance').innerText = balance;
 
     console.log(totalCost);
 })
 // console.log('Hocche Maybe')
 
 document.getElementById('save-btn').addEventListener('click', function(){
-    let income = document.getElementById('income');
-    let incomeTaka = parseInt(income.value);
+    // let income = document.getElementById('income');
+    // let incomeTaka = parseInt(income.value);
 
     // Saving Part 
     let save = document.getElementById('save');
     let saveTaka = parseInt(save.value);
-    let savingTaka = incomeTaka * (saveTaka / 100 );
-    let savingTakaText = parseInt(savingTaka);
-    document.getElementById('SavedTaka').innerText = savingTakaText;
+    let savingTaka = parseInt(kamanoTaka() * (saveTaka / 100 )); 
+    document.getElementById('SavedTaka').innerText = savingTaka;
+
+    // Remaning Balance 
+    // let remaningBalance = balance() - 
 })
