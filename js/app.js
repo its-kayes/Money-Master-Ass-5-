@@ -1,19 +1,19 @@
-function kamanoTaka(){
+function monthlyIncome(){
     let income = document.getElementById('income');
     let incomeTaka = parseInt(income.value);
     return incomeTaka;
 }
 
-function items(item){
-    let items = document.getElementById(item);
-    let itemsPriceText = items.value;
-    let itemsPrice = parseInt(itemsPriceText);
-}
+// function items(item){
+//     let items = document.getElementById(item);
+//     let itemsPriceText = items.value;
+//     let itemsPrice = parseInt(itemsPriceText);
+// }
 
 
 document.getElementById('calculate').addEventListener('click', function(){
     // Food Cost 
-    items('food');
+    // items('food');
     let food = document.getElementById('food');
     let foodPriceText = food.value;
     let foodPrice = parseInt(foodPriceText);
@@ -37,7 +37,7 @@ document.getElementById('calculate').addEventListener('click', function(){
     // Balance Part 
     // let income = document.getElementById('income');
     // let incomeTaka = parseInt(income.value);
-    let balance = kamanoTaka() - parseInt(totalCost);
+    let balance = monthlyIncome() - parseInt(totalCost);
     document.getElementById('balance').innerText = balance;
 
     console.log(totalCost);
@@ -51,9 +51,13 @@ document.getElementById('save-btn').addEventListener('click', function(){
     // Saving Part 
     let save = document.getElementById('save');
     let saveTaka = parseInt(save.value);
-    let savingTaka = parseInt(kamanoTaka() * (saveTaka / 100 )); 
+    let savingTaka = parseInt(monthlyIncome() * (saveTaka / 100 )); 
     document.getElementById('SavedTaka').innerText = savingTaka;
 
     // Remaning Balance 
-    // let remaningBalance = balance() - 
+    let newBalanceText = document.getElementById('balance').innerText;
+    let newBalance = parseInt(newBalanceText);
+    let remaningBalance = newBalance - savingTaka;
+    console.log(remaningBalance);
+    document.getElementById('remaining-balance').innerText = remaningBalance;
 })
