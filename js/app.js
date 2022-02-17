@@ -4,7 +4,8 @@ function monthlyIncome() {
     let incomeTaka = parseInt(income.value);
     if (incomeTaka < 0) {
         document.getElementById('negative').style = 'block';
-        document.getElementById('income').value = '';
+        // document.getElementById('income').value = '';
+        emptyString();
     }
     else {
         return incomeTaka;
@@ -18,11 +19,6 @@ function item(value) {
     // document.getElementById(value).innerText = 'Invalid Amount'
 }
 
-// function items(item){
-//     let items = document.getElementById(item);
-//     let itemsPriceText = items.value;
-//     let itemsPrice = parseInt(itemsPriceText);
-// }
 
 
 // Empty Function 
@@ -49,6 +45,9 @@ document.getElementById('calculate').addEventListener('click', function () {
     let clothes = document.getElementById('clothes');
     let clothesPriceText = clothes.value;
     let clothesPrice = parseInt(clothesPriceText);
+    // clothesPrice = () =>  {
+    //     console.log('string');
+    // }
 
     if (foodPrice < 0 || rentPrice < 0 || clothesPrice < 0) {
         document.getElementById('negative').style = 'block';
