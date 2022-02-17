@@ -3,23 +3,18 @@ function monthlyIncome() {
     let income = document.getElementById('income');
     let incomeTaka = parseInt(income.value);
     if (incomeTaka < 0) {
-        document.getElementById('negative').style = 'block';
-        // document.getElementById('income').value = '';
+        item('negative');
         emptyString();
     }
     else {
         return incomeTaka;
     }
-
 }
 
 // Item function
 function item(value) {
     document.getElementById(value).style = 'block';
-    // document.getElementById(value).innerText = 'Invalid Amount'
 }
-
-
 
 // Empty Function 
 function emptyString(){
@@ -29,9 +24,9 @@ function emptyString(){
     document.getElementById('clothes').value = '';
 }
 
+// Calculate Part
 document.getElementById('calculate').addEventListener('click', function () {
     // Food Cost 
-    // items('food');
     let food = document.getElementById('food');
     let foodPriceText = food.value;
     let foodPrice = parseInt(foodPriceText);
@@ -45,16 +40,10 @@ document.getElementById('calculate').addEventListener('click', function () {
     let clothes = document.getElementById('clothes');
     let clothesPriceText = clothes.value;
     let clothesPrice = parseInt(clothesPriceText);
-    // clothesPrice = () =>  {
-    //     console.log('string');
-    // }
-
+    
     if (foodPrice < 0 || rentPrice < 0 || clothesPrice < 0) {
-        document.getElementById('negative').style = 'block';
+        item('negative');
         emptyString();
-        // document.getElementById('food').value = '';
-        // document.getElementById('rent').value = '';
-        // document.getElementById('clothes').value = '';
     }
     else {
 
@@ -62,41 +51,27 @@ document.getElementById('calculate').addEventListener('click', function () {
         let totalCost = foodPrice + rentPrice + clothesPrice;
         if (totalCost > monthlyIncome()) {
             item('higher-cost');
-            // document.getElementById('higher-cost').style = 'block';
-            // document.getElementById('balance').innerText = 'Invalid Amount'
-            
-            // item('balance');
             emptyString();
             document.getElementById('total-exp').innerText = totalCost;
-
         }
         else {
             document.getElementById('total-exp').innerText = totalCost;
-            // let totalCostText = document.getElementById('total-exp');
-            // totalCostText.innerText = totalCost;
 
             // Balance Part 
-            // let income = document.getElementById('income');
-            // let incomeTaka = parseInt(income.value);
             let balance = monthlyIncome() - parseInt(totalCost);
             document.getElementById('balance').innerText = balance;
-
-            console.log(totalCost);
         }
     }
-
 })
-// console.log('Hocche Maybe')
 
+// Save Part
 document.getElementById('save-btn').addEventListener('click', function () {
-    // let income = document.getElementById('income');
-    // let incomeTaka = parseInt(income.value);
 
     // Saving Part 
     let save = document.getElementById('save');
     let saveTaka = parseInt(save.value);
     if (saveTaka < 0) {
-        document.getElementById('negative').style = 'block';
+        item('negative');
         document.getElementById('save').value = '';
     }
     else {
@@ -107,22 +82,18 @@ document.getElementById('save-btn').addEventListener('click', function () {
         let newBalanceText = document.getElementById('balance').innerText;
         let newBalance = parseInt(newBalanceText);
         if (newBalance < savingTaka) {
-            document.getElementById('higher-balance').style = 'block';
-            document.getElementById('SavedTaka').innerText = 'Invalid Amount';
-
+            item('higher-balance');
         }
         else {
             let remaningBalance = newBalance - savingTaka;
             if (remaningBalance < 0) {
-                document.getElementById('error-balance').style = 'block';
+                item('error-balance');
             }
             else {
                 console.log(remaningBalance);
                 document.getElementById('remaining-balance').innerText = remaningBalance;
             }
         }
-
     }
-
 })
 
