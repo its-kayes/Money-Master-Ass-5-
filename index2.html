@@ -10,12 +10,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.3.4/dist/flowbite.min.css" />
+
+    <!-- Font Awesome Kit  -->
+    <script src="https://kit.fontawesome.com/1fe5eeb043.js" crossorigin="anonymous"></script>
     <!-- <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script> -->
     <!-- <link rel="stylesheet" href="styles/style.css"> -->
 </head>
 <body>
     <header>
-        <h1 class="text-5xl font-semib text-center m-5 text-indigo-700"> Monthly Calculation </h1>
+        <h1 class="text-5xl font-semib text-center m-5 text-indigo-700"> Monthly Calculation </i></h1>
     </header>
     <main>
 
@@ -63,8 +66,11 @@
         <p id="error-balance" style="display: none;" class="mb-5 p-4 rounded-full text-1xl font-semibold bg-rose-500 text-slate-900">
             You Can't Calculate Remaining Balance before you Calculate Balance !! 
         </p>
-        <p style="display: none;">
-            String Can't Be Acceptable !! 
+        <p id="higher-balance" style="display: none;" class="mb-5 p-4 rounded-full text-1xl font-semibold bg-rose-500 text-slate-900">
+            Saving Amount can't be Higher Than Balance  !! 
+        </p>
+        <p id="higher-cost" style="display: none;" class="mb-5 p-4 rounded-full text-1xl font-semibold bg-rose-500 text-slate-900">
+            Total Expenses Can't be Higher Than Income !! 
         </p>
 
     </section>
